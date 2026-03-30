@@ -1,0 +1,589 @@
+{
+  "info": {
+    "_postman_id": "b669c8fa-ea19-4d28-b5b6-93214bf8b168",
+    "name": "Blockchain",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23460183"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"admin@admin.com\",\r\n    \"password\": \"a!1234567891\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/users/login",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Firebase",
+      "item": [
+        {
+          "name": "Bildirim Gönderme",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"Başlık\",\r\n    \"message\":\"Mesaj Geldi\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/firebase/send",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "firebase",
+                "send"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Log_Activities",
+      "item": [
+        {
+          "name": "Tüm Log",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/logs?page=1&limit=10&order=DESC",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "logs"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "order",
+                  "value": "DESC",
+                  "description": "asc|desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Veri Arama",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/logs/find/53",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "logs",
+                "find",
+                "53"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Log User Ara",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/logs/find/user/100",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "logs",
+                "find",
+                "user",
+                "100"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Veri Silme",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/logs/delete/53",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "logs",
+                "delete",
+                "53"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transaction",
+      "item": [
+        {
+          "name": "Tüm Transaction  - DB",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/transaction?page=1&limit=10&order=desc",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "transaction"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "order",
+                  "value": "desc",
+                  "description": "asc|desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transaction  - Arama - DB",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/transaction/find/:searchKey/:searchValue",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "transaction",
+                "find",
+                ":searchKey",
+                ":searchValue"
+              ],
+              "variable": [
+                {
+                  "key": "searchKey",
+                  "value": "jobId",
+                  "description": "jobId"
+                },
+                {
+                  "key": "searchValue",
+                  "value": "5f5d3c9f-760c-4c9d-b286-b9cf80dd8fac"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transaction  - Filtreleme - DB",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/transaction/filtre/:searchKey/:searchValue?page=1&limit=10&order=desc",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "transaction",
+                "filtre",
+                ":searchKey",
+                ":searchValue"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "order",
+                  "value": "desc"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "searchKey",
+                  "value": "isActive",
+                  "description": "status"
+                },
+                {
+                  "key": "searchValue",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transaction  - Filtre - Status - DB",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/transaction/filtre_status/:status/:statusJob?page=1&limit=10&order=asc",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "transaction",
+                "filtre_status",
+                ":status",
+                ":statusJob"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "order",
+                  "value": "asc"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "status",
+                  "value": "queued",
+                  "description": "error_user_already"
+                },
+                {
+                  "key": "statusJob",
+                  "value": "add_transaction"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transaction - Ekle",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{apikey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=utf-8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"created_byId\": 2, //! Veriyi Gönderen Kişi\r\n\r\n    \"type\" : \"tl_yatır\", //! tl_yatır\r\n    \"type_dbid\" : 11,\r\n\r\n    \"transactionId\": \"\", //! İşlem Id\r\n    \"transactionDate\": \"2026-03-24T13:12:59Z\", //! Zamanı\r\n    \"transactionIPAddress\": \"192.168.1.10\", //! Ip Adres\r\n    \"transaction_type\": \"tl_yatır\", //! tl_yatır - tl_cek - kripto_yatır - kripto_cek\r\n\r\n    \"customer_number\": \"33\",\r\n    \r\n    \"amount\": 1400, //! İşlemin ana tutarıdır.\r\n    \"sendAmount\": 1400, //! Gönderenin çıkan para miktarı\r\n    \"receiveAmount\": 1400, //! Alıcının aldığı miktar\r\n    \r\n    \"fee\": 0, // Komisyon   \r\n    \"description\": \"TL Yatırma\" // Açıklama\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/transaction/add",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "transaction",
+                "add"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transaction - Güncelle",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"created_byId\": 100, //! Veriyi Gönderen Kişi\r\n\r\n    //\"transactionDate\": \"2026-03-07T13:12:59Z\", //! Zamanı\r\n    //\"transactionIPAddress\": \"192.168.1.10\", //! Ip Adres\r\n    //\"transactionCountry\": \"TR\",\r\n\r\n    //\"customer_number\": \"107\",\r\n    //\"transaction_type\": \"tl_yatır\", //! tl_yatır - tl_cek - kripto_yatır - kripto_cek\r\n\r\n    \"amount\": 1600, //! İşlemin ana tutarıdır.\r\n    \"sendAmount\": 1600, //! Gönderenin çıkan para miktarı\r\n    \"receiveAmount\": 1600, //! Alıcının aldığı miktar\r\n    \r\n    \"fee\": 0, // Komisyon   \r\n    \"description\": \"TL Yatırma\", // Açıklama\r\n     \r\n    \"optionalParameters\": [\r\n        { \"key\": \"device\", \"value\": \"web\" }, //! Bağlandığı Yer\r\n        { \"key\": \"bankid\", \"value\": \"01\" }, //! Banka ID\r\n        { \"key\": \"bankcountry\", \"value\": \"TR\" }, //! Banka Ülke\r\n        { \"key\": \"bankcity\", \"value\": \"İstanbul\" }, //! Banka Şehir\r\n        { \"key\": \"bankbranch\", \"value\": \"Şube\" }, //! Banka Şube\r\n        { \"key\": \"bankname\", \"value\": \"Ziraat Bankasıx\" }, //! Banka Adı\r\n        { \"key\": \"bankaccountname\", \"value\": \"Müşteri Adı\" }, //! Müşteri Adı\r\n        { \"key\": \"bankaccountnumber\", \"value\": \"TR123456789000000000000001\" }, //! Hesap Numarası\r\n        { \"key\": \"bankaccountcurrency\", \"value\": \"TL\" } //! Banka Para Türü\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/transaction/edit/:jobIdValue",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "transaction",
+                "edit",
+                ":jobIdValue"
+              ],
+              "variable": [
+                {
+                  "key": "jobIdValue",
+                  "value": "b347e3c1-b29f-4925-9d05-3d5b25a480a9"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transaction - Sil",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-api-key",
+                "value": "{{apikey}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"created_byId\": 100 //! Veriyi Gönderen Kişi\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/transaction/delete/:jobIdValue",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "transaction",
+                "delete",
+                ":jobIdValue"
+              ],
+              "variable": [
+                {
+                  "key": "jobIdValue",
+                  "value": "5b92cf85-d49d-4853-bd54-38d83d7d2a2a"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Blockchain",
+      "item": [
+        {
+          "name": "Anasayfa - Get",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/blockchain",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "blockchain"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Anasayfa - Post",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Ebu enes\",\r\n    \"surname\":\"Yıldırım\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/blockchain",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "blockchain"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
