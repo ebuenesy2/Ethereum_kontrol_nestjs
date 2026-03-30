@@ -1,0 +1,42 @@
+Merhaba Ethereum adresi kontrol projesi.
+FIREBASE ile bildirim işlemleri.
+
+Nestjs Projesi
+---------------
+https://github.com/ebuenesy2/Ethereum_kontrol_nestjs
+
+
+Reactjs Projesi
+----------------
+https://github.com/ebuenesy2/Ethereum_kontrol_reactjs
+
+
+Projesi içinde şunlar kullanıldı
+----------------------------------
+
+- Sql ve Postman Collection Bu Klasor içindedir. [ https://github.com/ebuenesy2/Ethereum_kontrol_nestjs/tree/main/0_about ]
+- Swagger Dokumantasyon Yapıldı
+- Rabbit Mq
+- Redis
+- Socket
+- Eslint hataları kontrol edildi.
+
+**********************************************
+
+Login Bilgileri
+---------------
+{
+    "email":"admin@admin.com",
+    "password": "a!1234567891"
+}
+
+
+- Login olduktan sonra bildirimleri onaylandıktan sonra console token yazak. Bunu nestjs projesi içinden
+* [.env] FIREBASE_TOKEN 
+- Token bilgisini yazmanız gerek
+
+**********************************************
+
+Api Key: 7a8ea021-46d2-4a90-9eda-f04d35f78511
+
+**********************************************
