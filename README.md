@@ -14,26 +14,28 @@ Backend Dili     : Nestjs
 Veritabanı       : xx
 ```
 
+## Açıklama
+
+```
+Proje bakmdan önce okunamısı istediğim dosya
+Proje hakkında bilgi
+- [ 0_about > aciklama.txt]
+```
+
 ## Kurulum
 
 ```
 npm i
 ```
 
-## Çalıştır
+## Çalıştır - Anlık Çalıştırma
 
 ```
 npm run start
 ```
 
-## Çalıştır - Anlık Çalıştırma
-
-```
-npm run start:dev
-```
-
 ## Çalıştır - Diğer Env üzerinden
 
 ```
-npm run start:dev
+npm run start:enes
 ```

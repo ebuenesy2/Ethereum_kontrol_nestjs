@@ -21,6 +21,11 @@ Projesi içinde şunlar kullanıldı
 - Socket
 - Eslint hataları kontrol edildi.
 
+- Logger Pino
+- Log - için db yapıldı
+
+- Reactjs - Redux
+
 **********************************************
 
 Login Bilgileri
