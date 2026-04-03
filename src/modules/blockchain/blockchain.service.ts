@@ -14,8 +14,8 @@ export class BlockchainService implements OnModuleInit, OnModuleDestroy {
     private readonly firebaseService: FirebaseService,
     private readonly transactionService: TransactionService,
   ) {}
-  private provider: ethers.JsonRpcProvider;
-  private contract: ethers.Contract;
+  private provider: ethers.JsonRpcProvider | undefined;
+  private contract: ethers.Contract | undefined;
 
   onModuleInit() {
     const rpcUrl = process.env.ALCHEMY_URL;
@@ -43,12 +43,16 @@ export class BlockchainService implements OnModuleInit, OnModuleDestroy {
   }
 
   private listenTransfers(): void {
+    if (!this.contract) return;
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     void this.contract.on(
       'Transfer',
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       async (from, to, value, event: ethers.EventLog) => {
         try {
+          console.log('Yeni Transfer Olayı Algılandı Value:', value);
+
+          //! 10 USDT = 10,000,000 (USDT 6 decimal place)
           const amount = Number(value) / 1_000_000; // USDT decimals
 
           //! Transaction Kaydet
