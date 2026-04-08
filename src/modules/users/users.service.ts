@@ -23,10 +23,6 @@ export class UsersService {
 
   //! --------- User ---------------
 
-  //! ------------- Scanner ---------------------------------------------
-
-  //! Scanner Çevir
-
   //! Kullanıcı - Me
   async dbFind_UserMe() {
     try {
@@ -36,54 +32,11 @@ export class UsersService {
         .andWhere('users.level = 3')
         .getCount();
 
-      const scannerSent = await this.usersRepo
-        .createQueryBuilder('users')
-        .leftJoin(
-          'ms_sanctionscanner_customer',
-          'scanner',
-          'scanner.customer_number = users.id',
-        )
-        .where('users.status = 1')
-        .andWhere('users.level = 3')
-        .andWhere('scanner.id IS NOT NULL')
-        .getCount();
-
-      const scannerNotSent = await this.usersRepo
-        .createQueryBuilder('users')
-        .leftJoin(
-          'ms_sanctionscanner_customer',
-          'scanner',
-          'scanner.customer_number = users.id',
-        )
-        .where('users.status = 1')
-        .andWhere('users.level = 3')
-        .andWhere('scanner.id IS NULL')
-        .getCount();
-
-      //! Risk Grupları
-
-      const riskStats = await this.usersRepo
-        .createQueryBuilder('users')
-        .leftJoin(
-          'ms_sanctionscanner_customer',
-          'scanner',
-          'scanner.customer_number = users.id',
-        )
-        .select('scanner.triggeredAlarm', 'risk')
-        .addSelect('COUNT(*)', 'count')
-        .where('users.status = 1')
-        .andWhere('users.level = 3')
-        .groupBy('scanner.triggeredAlarm')
-        .getRawMany();
-
       return {
         title: 'me',
         status: 200,
         success: true,
         totalUsers,
-        scannerSent,
-        scannerNotSent,
-        riskStats,
       };
     } catch (error) {
       const ErrorMessage =
